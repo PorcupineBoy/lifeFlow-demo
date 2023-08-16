@@ -29,4 +29,10 @@
             batchSender
         );
     </chain>
+
+    <chain name="buyFlow">
+        THEN (
+        IF(buy,priceCut)
+        ,pay)
+    </chain>
 </flow>
