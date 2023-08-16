@@ -1,17 +1,11 @@
 package com.example.demo.test;
 
-import com.example.demo.cmp.BatchSenderCmp;
-import com.example.demo.cmp.IF1SwitchCmp;
 import com.yomahub.liteflow.annotation.LiteflowComponent;
-import com.yomahub.liteflow.core.NodeComponent;
 import com.yomahub.liteflow.core.NodeIfComponent;
-import com.yomahub.liteflow.core.NodeSwitchComponent;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 @LiteflowComponent(id = "buy", name = "buyCar")
 public class BuyClass extends NodeIfComponent {
@@ -26,6 +20,7 @@ public class BuyClass extends NodeIfComponent {
     public boolean processIf() throws Exception {
         List<Goods>  requestData = this.getRequestData();
         if (requestData.size() > 3) {
+            log.info("购买的物品大于3，走打折流程");
             return true;
         } else {
 

@@ -20,7 +20,7 @@ public class PayMoney extends NodeComponent {
     @Override
     public void process() throws Exception {
 
-        log.info("构造了支付流程组件：加入购物车流程，延迟一秒");
+        log.info("构造了支付流程组件：计算总价流程，延迟一秒");
         int time = new Random().nextInt(1000);
         Thread.sleep(time);
         BuyContext context = this.getContextBean(BuyContext.class);
